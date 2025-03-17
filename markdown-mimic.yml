@@ -1,0 +1,18 @@
+name: Markdown Mimic - grokdesigns
+on: 
+  push:
+    branches:
+      - main                                             #Branch that will trigger action on new push.
+  workflow_dispatch:
+jobs:
+  Markdown-Mimic:
+    runs-on: ubuntu-latest                               #Platform that GitHub will use to run container.
+    steps:
+      - name: Mimic
+        uses: docker://grokdesigns/markdown-mimic:latest #Docker image containing script.
+        with:
+          TOKEN: ${{ secrets.TOKEN }}                    #Token you saved as a secret. Do not change.
+          REPOSITORY : 'markdown-mimic'                  #Repository the action is running on.
+          SOURCE : './assets/changingtextfile.md'        #File where you put changing content.
+          TARGET : './README.md'                         #Target file that will have content inserted.
+          BRANCH: 'main'                                 #Branch containing your files.
