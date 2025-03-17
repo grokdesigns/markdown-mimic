@@ -70,7 +70,7 @@ jobs:
       - name: Mimic
         uses: docker://grokdesigns/markdown-mimic:latest #Docker image containing script.
         with:
-          TOKEN: ${{ secrets.MIMIC_TOKEN }}                    #Token you saved as a secret. Do not change.
+          TOKEN: ${{ secrets.MIMIC_TOKEN }}              #Token you saved as a secret. Do not change.
           REPOSITORY : 'markdown-mimic'                  #Repository the action is running on.
           SOURCE : './assets/changingtextfile.md'        #File where you put changing content.
           TARGET : './README.md'                         #Target file that will have content inserted.
