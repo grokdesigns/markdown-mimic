@@ -7,5 +7,4 @@ FROM python:3.9.21-slim
 WORKDIR /app
 COPY --from=backend-builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
 COPY script.py .
-#CMD ["/bin/bash", "script.py", "main:app"]
 CMD ["python", "/app/script.py"]
