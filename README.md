@@ -77,7 +77,7 @@ jobs:
           BRANCH: 'main'                                 #Branch containing your files.
 ```
 
-You can set this action up by navigating to your repo, clicking *Actions*, and then clicking *New workflow*. Alternately, you can download the [markdown-mimic.yml](markdown-mimic.yml) file and place it in your local repo at: /.github/workflows/ on your local repo and push to GitHub.
+You can set this action up by navigating to your repo, clicking *Actions*, and then clicking *New workflow*. Alternately, you can download the [action.yml](action.yml) file and place it in your local repo at: /.github/workflows/ on your local repo and push to GitHub.
 
 ## Variables
 
