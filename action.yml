@@ -1,4 +1,8 @@
-name: Markdown Mimic - grokdesigns
+name: Markdown Mimic
+author: grokdesigns
+description: Markdown Mimic is a GitHub Action to copy the content of a Markdown file and paste those contents within another Markdown file upon push.
+icon: copy
+color: gray-dark
 on: 
   push:
     branches:
