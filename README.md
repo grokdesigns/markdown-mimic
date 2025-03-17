@@ -19,7 +19,7 @@
 
 3. This token will require read and write access on the *Contents* and *Commit statuses*"* options.
 
-4. Save this token and create a new secret at: https://github.com\/*\<username\>*\/*\<repository name\>*\/settings\/secrets\/actions\/new. The name should be **TOKEN** and the secret should be your token (*should start with github_pat_*)
+4. Save this token and create a new secret at: https://github.com\/*\<username\>*\/*\<repository name\>*\/settings\/secrets\/actions\/new. The name should be **MIMIC_TOKEN** and the secret should be your token (*should start with github_pat_*)
 
 4. Create an .md file and enter the contents you would like copied. This file will be the *source*.
 
@@ -70,7 +70,7 @@ jobs:
       - name: Mimic
         uses: docker://grokdesigns/markdown-mimic:latest #Docker image containing script.
         with:
-          TOKEN: ${{ secrets.TOKEN }}                    #Token you saved as a secret. Do not change.
+          TOKEN: ${{ secrets.MIMIC_TOKEN }}                    #Token you saved as a secret. Do not change.
           REPOSITORY : 'markdown-mimic'                  #Repository the action is running on.
           SOURCE : './assets/changingtextfile.md'        #File where you put changing content.
           TARGET : './README.md'                         #Target file that will have content inserted.
