@@ -17,7 +17,7 @@
 
 2. Choose *Only select repositories* and select the repository in which this action will run.
 
-3. This token will require read and write access on the *Contents* and *Commit statuses*"* options.
+3. This token will require read and write access on the **Contents** and **Commit statuses** options.
 
 4. Save this token and create a new secret at: `https://github.com/(USERNAME)/(REPONAME)/settings/secrets/actions/new`. The name should be **MIMIC_TOKEN** and the secret should be your token (*should start with github_pat_*)
 
