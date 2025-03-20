@@ -2,22 +2,39 @@ name: Markdown Mimic
 author: grokdesigns
 description: Action to copy the content of a Markdown file and paste those contents within another Markdown file upon push.
 branding:
-  icon: copy
-  color: gray-dark
-on: 
-  push:
-    branches:
-      - main                                             #Branch that will trigger action on new push.
-  workflow_dispatch:
-jobs:
-  Markdown-Mimic:
-    runs-on: ubuntu-latest                               #Platform that GitHub will use to run container.
-    steps:
-      - name: Mimic
-        uses: docker://grokdesigns/markdown-mimic:latest #Docker image containing script.
-        with:
-          TOKEN: ${{ secrets.MIMIC_TOKEN }}                    #Token you saved as a secret. Do not change.
-          REPOSITORY : 'markdown-mimic'                  #Repository the action is running on.
-          SOURCE : './assets/changingtextfile.md'        #File where you put changing content.
-          TARGET : './README.md'                         #Target file that will have content inserted.
-          BRANCH: 'main'                                 #Branch containing your files.
+  icon: "copy"
+  color: "gray-dark"
+
+inputs:
+  git_username:
+    description: "Git username for commits"
+    required: true
+    default: "github-actions[bot]"
+  git_email:
+    description: "Git email for commits"
+    required: true
+    default: "github-actions[bot]@users.noreply.github.com"
+  skip_ci:
+    description: "Whether to add [no ci] to commit messages"
+    required: true
+    default: "yes"
+  commit_message:
+    description: "Commit message for generated files"
+    required: true
+    default: "🐱 - Generated via Meow Maker"
+  output_folder:
+    description: "Folder to output generated files"
+    required: true
+    default: "output"
+  input_folder:
+    description: "Folder containing template files"
+    required: true
+    default: "templates"
+  branch_name:
+    description: "Branch name to associate with the commit"
+    required: true
+    default: "main"
+    
+runs:
+  using: "docker"
+  image: ./Dockerfile
