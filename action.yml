@@ -21,7 +21,7 @@ inputs:
   commit_message:
     description: "Commit message for generated files"
     required: true
-    default: "🐱 - Generated via Meow Maker"
+    default: "🤖 - Generated via Markdown Mimic"
   output_folder:
     description: "Folder to output generated files"
     required: true
