@@ -43,7 +43,7 @@ jobs:
 
 2. Create markdown-mimic.yml in your repository under .github/workflows/ using the template.
 
-In the files that you would like Markdown Mimic to insert comment, use the below code in the Markdown file:
+In the files that you would like Markdown Mimic to insert content in, use the below code in the Markdown file:
 ```js
 <!--MIMIC_START-->
 <!--MIMIC_END-->
