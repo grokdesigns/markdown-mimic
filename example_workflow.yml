@@ -13,10 +13,11 @@ jobs:
       - name: Markdown Mimic
         uses: grokdesigns/markdown-mimic@v1.0.0
         with:
-          git_username: 'github-actions[bot]'
-          git_email: 'github-actions[bot]@users.noreply.github.com'
-          skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
-          commit_message: '🤖 - Generated via Markdown Mimic'
-          output_folder: 'output'
-          input_folder: 'templates'
           branch_name: ${{ github.ref }}  #Don't change.
+          commit_message: '🤖 - Generated via Markdown Mimic'
+          file_ext: 'md'
+          git_email: 'github-actions[bot]@users.noreply.github.com'
+          git_username: 'github-actions[bot]'
+          input_folder: 'templates'
+          output_folder: 'output'
+          skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
