@@ -29,28 +29,33 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Markdown Mimic
-        uses: grokdesigns/markdown-mimic@v1.0.0
+        uses: grokdesigns/markdown-mimic@1.1.0 #Should match latest release.
         with:
-          branch_name: ${{ github.ref }}  #Don't change.
-          commit_message: '🤖 - Generated via Markdown Mimic'
-          file_ext: 'md'
-          git_email: 'github-actions[bot]@users.noreply.github.com'
-          git_username: 'github-actions[bot]'
-          input_folder: 'templates'
-          output_folder: 'output'
+          git_username: 'github-actions[bot]' #Username that will be attributed to the commit.
+          git_email: 'github-actions[bot]@users.noreply.github.com' #Email that will be attributed to the commit.
           skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
+          commit_message: '🤖 - Generated via Markdown Mimic' #Message that will be attributed to the commit.
+          file_exts: 'md,txt' #File extension(s) that you would like Markdown Mimic to search through for placeholders.
+          overwrite_original: 1 #Overwrite original files. If set to 0, updated files will be placed in output_folder in same folder structure..
+          output_folder: 'outputs' #Only used if overwrite_original: 0
+          input_folder: 'templates' #Location of *.mimic templates.
+          branch_name: ${{ github.ref }}  #Don't change, will automatically be assigned from branch at top of workflow.
+
 ```
 
 2. Create markdown-mimic.yml in your repository under .github/workflows/ using the template.
 
-In the files that you would like Markdown Mimic to insert content in, use the below code in the Markdown file:
-```js
-<!--MIMIC_START-->
-<!--MIMIC_END-->
-```
+3. In the templates directory, create your Markdown or plaintext templates. Name them based on the placeholder you would like its contents to replace.
 
-3. In the 'input_folder' you specify in your Workflow, create Markdown templates with `<filename>.mimic`, where `<filename>` matches the filename of your output file. I.e. if you create README.mimic as a template, it will be output as README.md (or other extension as you declare in the Workflow)
-
+## Examples
+   
+|Template Filename|Outcome|
+|--------------------|-----------|
+|`readme.mimic`|All files with the file extensions specified in options, with the `<!--MIMIC_README_START--> and <!--MIMIC_README_END-->)` placeholder in them, will have the contents replaced with the contents of readme.mimic|
+|`legalese.mimic`|All files with the file extensions specified in options, with the `<!--MIMIC_LEGALESE_START--> and <!--MIMIC_LEGALESE_END-->)` placeholder in them, will have the contents replaced with the contents of legalese.mimic|
+|`boilerplate.mimic`|All files with the file extensions specified in options, with the `<!--MIMIC_BOILERPLATE_START--> and <!--MIMIC_BOILERPLATEE_END-->)` placeholder in them, will have the contents replaced with the contents of boilerplate.mimic|
+|`grey-fox.mimic`|All files with the file extensions specified in options, with the `<!--MIMIC_GREY-FOX_START--> and <!--MIMIC_GREY-FOX_END-->)` placeholder in them, will have the contents replaced with the contents of grey-fox.mimic|
+|`project-x.mimic`|All files with the file extensions specified in options, with the `<!--MIMIC_PROJECT-X_START--> and <!--MIMIC_PROJECT-X_END-->)` placeholder in them, will have the contents replaced with the contents of project-x.mimic|
 
 ## Variables
 
@@ -65,6 +70,7 @@ The following input variables are all required for the action to run:
 |`git_username`|Username you want associated with commits by the tool..|
 |`input_folder`|Input folder where .mimic files will be stored in the repository.|
 |`output_folder`|Output folder where .md (or specified extension) files will be stored in the repository.|
+|`overwrite_original`|Overwrite original files in place or output to outputs folder (a new branch will be created either way).|
 |`skip_ci`|Setting this to 'yes' will append [no ci] to commits by the tool so that it does not trigger itself.|
 
 ## Author
