@@ -41,7 +41,7 @@ inputs:
   overwrite_original:
     description: "Overwrite originals or create new copies in output folder."
     required: true
-    default: "1"
+    default: "0"
     
 runs:
   using: "docker"
