@@ -1,2 +1,2 @@
-FROM grokdesigns/markdown-mimic:dev
+FROM grokdesigns/markdown-mimic:latest
 CMD ["python", "/app/mimic.py"]
