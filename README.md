@@ -65,11 +65,11 @@ The following input variables are all required for the action to run:
 |--------------------|-----------|
 |`branch_name`|Name of the branch the action is triggered by. This will be calculated automatically.|
 |`commit_message`|Commit message that you would like attached to commits by the tool.|
-|`file_ext`|File extension you wish to use for output files (generally .md).|
+|`file_ext`|File extension(s) you wish to search for placeholders.|
 |`git_email`|Email address you want associated with commits by the tool.|
-|`git_username`|Username you want associated with commits by the tool..|
+|`git_username`|Username you want associated with commits by the tool.|
 |`input_folder`|Input folder where .mimic files will be stored in the repository.|
-|`output_folder`|Output folder where .md (or specified extension) files will be stored in the repository.|
+|`output_folder`|Output folder where .md (or specified extension) files will be stored in the repository if not overwriting originals.|
 |`overwrite_original`|Overwrite original files in place or output to outputs folder (a new branch will be created either way).|
 |`skip_ci`|Setting this to 'yes' will append [no ci] to commits by the tool so that it does not trigger itself.|
 
