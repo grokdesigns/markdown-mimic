@@ -22,7 +22,7 @@ inputs:
     description: "Commit message for generated files"
     required: true
     default: "🤖 - Generated via Markdown Mimic"
-  file_exts:
+  file_ext:
     description: "File extension for output files"
     required: true
     default: "md"
