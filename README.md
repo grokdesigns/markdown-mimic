@@ -49,7 +49,7 @@ In the files that you would like Markdown Mimic to insert content in, use the be
 <!--MIMIC_END-->
 ```
 
-3. In the 'input_folder' you specify in your Workflow, place Markdown templates with <filename>.mimic, where <filename> matches the filename of your output file. I.e. if you create README.mimic as a template, it will be output as README.md (or other extension as you declare in the Workflow)
+3. In the 'input_folder' you specify in your Workflow, create Markdown templates with `<filename>.mimic`, where `<filename>` matches the filename of your output file. I.e. if you create README.mimic as a template, it will be output as README.md (or other extension as you declare in the Workflow)
 
 
 ## Variables
