@@ -73,6 +73,14 @@ The following input variables are all required for the action to run:
 |`overwrite_original`|Overwrite original files in place or output to outputs folder (a new branch will be created either way).|
 |`skip_ci`|Setting this to 'yes' will append [no ci] to commits by the tool so that it does not trigger itself.|
 
+## Performance
+
+50k files, 5250 files with Markdown Mimic placeholders, 9 second execution.
+![image](https://github.com/user-attachments/assets/09c939f2-9ff0-4221-b83f-66e44bde7ec3)
+
+![image](https://github.com/user-attachments/assets/f0d4c67c-e46f-4083-83e0-4934cce41b67)
+
+
 ## Author
 
 The Markdown Mimic GitHub action is written by [grokdesigns](https://github.com/grokdesigns).
