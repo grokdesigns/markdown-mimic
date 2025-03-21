@@ -38,7 +38,7 @@ inputs:
     description: "Branch name to associate with the commit"
     required: true
     default: "main"
-  branch_name:
+  overwrite_original:
     description: "Overwrite originals or create new copies in output folder."
     required: true
     default: "1"
