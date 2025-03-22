@@ -6,18 +6,10 @@ branding:
   color: "gray-dark"
 
 inputs:
-  git_username:
-    description: "Git username for commits"
+  branch_name:
+    description: "Branch name to associate with the commit"
     required: true
-    default: "github-actions[bot]"
-  git_email:
-    description: "Git email for commits"
-    required: true
-    default: "github-actions[bot]@users.noreply.github.com"
-  skip_ci:
-    description: "Whether to add [no ci] to commit messages"
-    required: true
-    default: "yes"
+    default: "main"
   commit_message:
     description: "Commit message for generated files"
     required: true
@@ -26,22 +18,34 @@ inputs:
     description: "File extension for output files"
     required: true
     default: "md"
-  output_folder:
-    description: "Folder to output generated files"
+  git_email:
+    description: "Git email for commits"
     required: true
-    default: "output"
+    default: "github-actions[bot]@users.noreply.github.com"
+  git_home_dir:
+    description: "Repository root directory"
+    required: true
+    default: "/github/workspace"
+  git_username:
+    description: "Git username for commits"
+    required: true
+    default: "github-actions[bot]"
   input_folder:
     description: "Folder containing template files"
     required: true
     default: "templates"
-  branch_name:
-    description: "Branch name to associate with the commit"
+  output_folder:
+    description: "Folder to output generated files"
     required: true
-    default: "main"
+    default: "output"
   overwrite_original:
     description: "Overwrite originals or create new copies in output folder."
     required: true
     default: "0"
+  skip_ci:
+    description: "Whether to add [no ci] to commit messages"
+    required: true
+    default: "yes"
     
 runs:
   using: "docker"
