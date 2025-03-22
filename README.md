@@ -9,7 +9,7 @@
 
 ## Description
 
-- This is a [GitHub Action](https://developer.github.com/actions/) to copy the content of a Markdown file and paste those contents within another Markdown file.
+- This is a [GitHub Action](https://developer.github.com/actions/) to copy the content of a one text file and paste those contents within another text file.
 
 ## Usage
 
