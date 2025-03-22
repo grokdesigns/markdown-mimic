@@ -31,15 +31,15 @@ jobs:
       - name: Markdown Mimic
         uses: grokdesigns/markdown-mimic@1.1.0 #Should match latest release.
         with:
-          git_username: 'github-actions[bot]' #Username that will be attributed to the commit.
-          git_email: 'github-actions[bot]@users.noreply.github.com' #Email that will be attributed to the commit.
-          skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
+          branch_name: ${{ github.ref }}  #Don't change, will automatically be assigned from branch at top of workflow.
           commit_message: '🤖 - Generated via Markdown Mimic' #Message that will be attributed to the commit.
           file_exts: 'md,txt' #File extension(s) that you would like Markdown Mimic to search through for placeholders.
-          overwrite_original: 1 #Overwrite original files. If set to 0, updated files will be placed in output_folder in same folder structure.
-          output_folder: 'outputs' #Only used if overwrite_original: 0
+          git_email: 'github-actions[bot]@users.noreply.github.com' #Email that will be attributed to the commit.
+          git_username: 'github-actions[bot]' #Username that will be attributed to the commit.
           input_folder: 'templates' #Location of *.mimic templates.
-          branch_name: ${{ github.ref }}  #Don't change, will automatically be assigned from branch at top of workflow.
+          output_folder: 'outputs' #Only used if overwrite_original: 0
+          overwrite_original: 1 #Overwrite original files. If set to 0, updated files will be placed in output_folder in same folder structure.
+          skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
 
 ```
 
