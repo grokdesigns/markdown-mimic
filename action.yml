@@ -22,10 +22,6 @@ inputs:
     description: "Git email for commits"
     required: true
     default: "github-actions[bot]@users.noreply.github.com"
-  git_home_dir:
-    description: "Repository root directory"
-    required: true
-    default: "/github/workspace"
   git_username:
     description: "Git username for commits"
     required: true
