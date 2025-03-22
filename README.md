@@ -9,7 +9,7 @@
 
 ## Description
 
-- This is a [GitHub Action](https://developer.github.com/actions/) to copy the content of a one text file and paste those contents within another text file.
+- This is a [GitHub Action](https://developer.github.com/actions/) to copy the content of a one text file and paste those contents within another text file (or many files). If you have a lot of documents that contain the same section or Markdown or text, you can insert a special placeholder for the content and on push, this action will replace all placeholders in all files with your desired content. Change one, update many.
 
 ## Usage
 
