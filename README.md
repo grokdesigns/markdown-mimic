@@ -36,7 +36,7 @@ jobs:
           skip_ci: 'yes' #BE VERY CAREFUL CHANGING THIS. IT COULD CREATE INFINITE WORKFLOWS.
           commit_message: '🤖 - Generated via Markdown Mimic' #Message that will be attributed to the commit.
           file_exts: 'md,txt' #File extension(s) that you would like Markdown Mimic to search through for placeholders.
-          overwrite_original: 1 #Overwrite original files. If set to 0, updated files will be placed in output_folder in same folder structure..
+          overwrite_original: 1 #Overwrite original files. If set to 0, updated files will be placed in output_folder in same folder structure.
           output_folder: 'outputs' #Only used if overwrite_original: 0
           input_folder: 'templates' #Location of *.mimic templates.
           branch_name: ${{ github.ref }}  #Don't change, will automatically be assigned from branch at top of workflow.
